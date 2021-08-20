@@ -24,7 +24,7 @@
             fill="#1da1f2"
           ></path>
         </svg>
-        <span class="xk-card-time">{{ date }}</span>
+        <span class="xk-card-time" :title="time_title">{{ date }}</span>
       </div>
     </div>
     <div class="xk-card-content" v-html="content"></div>
@@ -50,19 +50,21 @@ export default {
       from: ''
     };
   },
+  computed: {
+    time_title() {
+      return new Date(this.bbData.date).toLocaleString();
+    }
+  },
   mounted() {
     this.content = this.formatBody(this.bbData.content);
     this.from = this.bbData.from;
-    function time(time = +new Date()) {
-    var date = new Date(time + 8 * 3600 * 1000); 
-    return date.toJSON().substr(0, 19).replace('T', ' ');
-    }
     var date1 = this.bbData.date
     var date2 = new Date()
     var date3 = date2.getTime() - new Date(date1).getTime()
-    var datetime = time(this.bbData.date);
+    var date4 = new Date(this.bbData.date).getTime() + 8*3600*1000
+    var datetime = new Date(date4).toJSON();
+    datetime = datetime.substr(0, 10).replace('T', ' ');
     if (date3 > 2678400000) {
-      datetime = datetime.substr(0, 16);
       this.date = datetime;
     } else {
       this.date = timeago.format(this.bbData.date, 'zh_CN');;
