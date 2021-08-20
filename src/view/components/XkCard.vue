@@ -51,14 +51,22 @@ export default {
     };
   },
   mounted() {
-    function time(time = +new Date()) {
-    var date = new Date(time + 8 * 3600 * 1000); // 增加8小时
-    return date.toJSON().substr(0, 19).replace('T', ' ');
-    }
     this.content = this.formatBody(this.bbData.content);
     this.from = this.bbData.from;
+    function time(time = +new Date()) {
+    var date = new Date(time + 8 * 3600 * 1000); 
+    return date.toJSON().substr(0, 19).replace('T', ' ');
+    }
+    var date1 = this.bbData.date
+    var date2 = new Date()
+    var date3 = date2.getTime() - new Date(date1).getTime()
     var datetime = time(this.bbData.date);
-    this.date = timeago.format(datetime, 'zh_CN');
+    if (date3 > 2678400000) {
+      datetime = datetime.substr(0, 16);
+      this.date = datetime;
+    } else {
+      this.date = timeago.format(this.bbData.date, 'zh_CN');;
+    }
   },
   methods: {
     formatBody: (body) => {
