@@ -4,21 +4,28 @@ const CopyPlugin = require('copy-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const ROOT_PATH = path.resolve(__dirname)
 const BUILD_PATH = path.resolve(ROOT_PATH, 'dist')
-const version = require('./package.json').version
+const packageinfo = require('./package.json').version
 const TerserPlugin = require('terser-webpack-plugin')
-const banner =
-  'ispeak-bber v' +
-  version +
-  '\n' +
-  '(c) 2021-' +
-  new Date().getFullYear() +
-  ' XiaoKang\n' +
-  'Released under the MIT License.\n' +
-  'Last Update: ' +
-  new Date().toLocaleString()
+var MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   module: {
+    mode: 'production',//设置生产环境构建
+    entry: {
+      /* eslint-disable-next-line quote-props */
+      'ispeak-bber-md': './src/js/main-md.js',
+      'ispeak-bber': './src/js/main.js'
+    },
+    optimization: {
+      minimize: true,
+      minimizer: [new TerserPlugin()],
+    },
+    output: {
+      path: BUILD_PATH,
+      filename: '[name].min.js',
+      library: 'ispeakBber',
+      libraryTarget: 'umd'
+    },
     rules: [
       { test: /\.vue$/, loader: 'vue-loader' },
       { test: /\.css$/, use: ['vue-style-loader', 'css-loader'] },
@@ -35,23 +42,21 @@ module.exports = {
             ]
           }
         }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          process.env.NODE_ENV !== 'production'
+            ? 'vue-style-loader'
+            : MiniCssExtractPlugin.loader,
+          'css-loader'
+        ]
       }
     ]
   },
-  entry: {
-    /* eslint-disable-next-line quote-props */
-    'ispeak-bber-md': './src/js/main-md.js',
-    'ispeak-bber': './src/js/main.js'
-  },
-  output: {
-    path: BUILD_PATH,
-    filename: '[name].min.js',
-    library: 'ispeakBber',
-    libraryTarget: 'umd'
-  },
   target: ['web', 'es5'],
   plugins: [
-    new webpack.BannerPlugin(banner),
+    new webpack.BannerPlugin(`package version: ${packageinfo}`),
     new CopyPlugin({
       patterns: [{ from: 'demo/', to: './' }]
     }),
@@ -64,6 +69,9 @@ module.exports = {
         ie8: true,
         safari10: true
       }
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'style.css'
     })
   ],
   devServer: {

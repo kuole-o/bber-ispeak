@@ -1050,10 +1050,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/json-schema@*", "@types/json-schema@^7.0.5", "@types/json-schema@^7.0.6":
-  "integrity" "sha1-mKmTUWyFnrDVxMjwmDF6nqaNua0="
-  "resolved" "https://registry.npm.taobao.org/@types/json-schema/download/@types/json-schema-7.0.7.tgz?cache=0&sync_timestamp=1613379017372&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fjson-schema%2Fdownload%2F%40types%2Fjson-schema-7.0.7.tgz"
-  "version" "7.0.7"
+"@types/json-schema@*", "@types/json-schema@^7.0.5", "@types/json-schema@^7.0.8":
+  "integrity" "sha512-qcUXuemtEu+E5wZSJHNxUXeCZhAfXKQ41D+duX+VYPde7xyEVZci+/oXKJL13tnRs9lR2pr4fod59GT6/X1/yQ=="
+  "resolved" "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.9.tgz"
+  "version" "7.0.9"
 
 "@types/json5@^0.0.29":
   "integrity" "sha1-7ihweulOEdK4J7y+UnC86n8+ce4="
@@ -3770,6 +3770,13 @@
   "resolved" "https://registry.npm.taobao.org/mimic-fn/download/mimic-fn-3.1.0.tgz"
   "version" "3.1.0"
 
+"mini-css-extract-plugin@^2.2.0":
+  "integrity" "sha512-91HeVHbq7PUJ4TwOuMTlFWfVWrLqf3SF0PlEDPV+wtgsfxrMebN9LLzflyQqdKLp4/H3PexRB1WLKsCqpWKkxQ=="
+  "resolved" "https://registry.npmjs.org/mini-css-extract-plugin/-/mini-css-extract-plugin-2.2.0.tgz"
+  "version" "2.2.0"
+  dependencies:
+    "schema-utils" "^3.1.0"
+
 "minimalistic-assert@^1.0.0":
   "integrity" "sha1-LhlN4ERibUoQ5/f7wAznPoPk1cc="
   "resolved" "https://registry.npm.taobao.org/minimalistic-assert/download/minimalistic-assert-1.0.1.tgz"
@@ -4654,12 +4661,12 @@
     "ajv" "^6.12.4"
     "ajv-keywords" "^3.5.2"
 
-"schema-utils@^3.0.0":
-  "integrity" "sha1-Z1AvaqK2ai1AMrQnmilEl4oJE+8="
-  "resolved" "https://registry.npm.taobao.org/schema-utils/download/schema-utils-3.0.0.tgz"
-  "version" "3.0.0"
+"schema-utils@^3.0.0", "schema-utils@^3.1.0":
+  "integrity" "sha512-Y5PQxS4ITlC+EahLuXaY86TXfR7Dc5lw294alXOq86JAHCihAIZfqv8nNCWvaEJvaC51uN9hbLGeV0cFBdH+Fw=="
+  "resolved" "https://registry.npmjs.org/schema-utils/-/schema-utils-3.1.1.tgz"
+  "version" "3.1.1"
   dependencies:
-    "@types/json-schema" "^7.0.6"
+    "@types/json-schema" "^7.0.8"
     "ajv" "^6.12.5"
     "ajv-keywords" "^3.5.2"
 
@@ -5556,7 +5563,7 @@
     "source-list-map" "^2.0.1"
     "source-map" "^0.6.1"
 
-"webpack@^3.0.0 || ^4.1.0 || ^5.0.0-0", "webpack@^4.0.0 || ^5.0.0", "webpack@^5.1.0", "webpack@^5.21.2", "webpack@>=2", "webpack@4.x.x || 5.x.x":
+"webpack@^3.0.0 || ^4.1.0 || ^5.0.0-0", "webpack@^4.0.0 || ^5.0.0", "webpack@^5.0.0", "webpack@^5.1.0", "webpack@^5.21.2", "webpack@>=2", "webpack@4.x.x || 5.x.x":
   "integrity" "sha1-bsD1BZ+NfHlhB1+lU8/Oe3korLM="
   "resolved" "https://registry.npm.taobao.org/webpack/download/webpack-5.24.3.tgz"
   "version" "5.24.3"
