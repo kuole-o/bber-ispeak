@@ -2,7 +2,7 @@
   "name": "bber-ispeak",
   "version": "1.4.4",
   "description": "bber-ispeak前端展示",
-  "main": "ispeak-bber.min.js",
+  "main": "dist/ispeak-bber.min.js",
   "dependencies": {
     "@cloudbase/js-sdk": "^1.4.1",
     "axios": "^0.21.1",
@@ -19,6 +19,7 @@
     "@webpack-cli/serve": "^1.3.0",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^7.0.0",
+    "cross-env": "^7.0.3",
     "css-loader": "^3.6.0",
     "eslint": "^7.19.0",
     "eslint-config-standard": "^16.0.2",

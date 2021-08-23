@@ -130,15 +130,7 @@ export default {
   box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.06);
   overflow: hidden;
   margin-top: 20px;
-  transition: all 0.25s ease 0.2s,
-    transform 0.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0.2s,
-    -webkit-transform 0.5s cubic-bezier(0.6, 0.2, 0.1, 1) 0.2s;
   user-select: none;
-  visibility: visible;
-  animation-duration: 700ms;
-  animation-delay: 30ms;
-  animation-iteration-count: 1;
-  animation-name: zoomIn;
 }
 .xk-card:hover {
   box-shadow: 0 5px 10px 8px rgba(7, 17, 27, 0.16);
