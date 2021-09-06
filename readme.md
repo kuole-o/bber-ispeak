@@ -7,7 +7,7 @@
 
 ### ispeak修改版使用
 
-使用如下链接替换原来的js：
+使用如下链接替换原来的js（加在上述timeago.js后）：
 ```js
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/kuole-o/bber-ispeak@main/dist/ispeak-bber.min.js" charset="utf-8" ></script>
 ```
