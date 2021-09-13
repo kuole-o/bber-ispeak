@@ -1,19 +1,26 @@
 ## ispeak修改版
 
-### 在小康基础再开发，解决了“xxx前”部分时间出错问题。使用请在md文件中ispeak前引用一个js插件：
+### 在小康基础再开发，解决了“xxx前”相对时间出错问题。使用请在md文件中ispeak前引用一个js插件：
 ```js
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/timeago.js@4.0.2/dist/timeago.min.js" charset="utf-8" ></script>
 ```
 ### [使用教程](https://guole.fun/posts/34234/)
 
-### 做了些样式调整
+### ispeak修改版使用
+
+使用如下链接替换原来的js（加在上述timeago.js后）：
+```js
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/kuole-o/bber-ispeak@main/dist/ispeak-bber.min.js" charset="utf-8" ></script>
+```
+
+### 修改点
 
 * 支持QQ音乐/网易云音乐歌曲分享，说说页面在线播放
 * “再翻翻”增加阴影模糊效果
 * “my bibi”调整为“闪念”
 * 图片布局调整
-* 增加wow动画支持（需要网站本身配置wow）
-* 修复原ispeak中“三周”到“四周”时，直接展示具体日期  
+* 增加wow动画支持（需要网站本身配置wow.js）
+* 修复原ispeak中“三周”到“四周”相对日期时，直接展示具体日期  
 * 优化时间显示，增加日期hover时的title属性，用以显示实际时间  
 * 优化加载动画，修复卡顿问题
 
