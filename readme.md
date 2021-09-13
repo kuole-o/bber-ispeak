@@ -4,9 +4,11 @@
 ```js
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/timeago.js@4.0.2/dist/timeago.min.js" charset="utf-8" ></script>
 ```
+### [使用教程](https://guole.fun/posts/34234/)
 
 ### 做了些样式调整
 
+* 支持QQ音乐/网易云音乐歌曲分享，说说页面在线播放
 * “再翻翻”增加阴影模糊效果
 * “my bibi”调整为“闪念”
 * 图片布局调整

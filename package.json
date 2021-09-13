@@ -1,6 +1,6 @@
 {
   "name": "bber-ispeak",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "bber-ispeak前端展示",
   "main": "dist/ispeak-bber.min.js",
   "dependencies": {
