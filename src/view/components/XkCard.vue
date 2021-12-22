@@ -104,9 +104,12 @@ export default {
           // 替换所有图片链接为图片
           //- QQ音乐和网易云音乐处理
           const re_forpic = /\bhttps?:[^:<>"]*\/([^:<>"]*)(\.(jpeg)|(png)|(jpg)|(webp))/g;
-          const qq_music = /y.qq.com/g;
-          const netease_music = /music.163.com/g;
-          const music_url = /[a-zA-z]+:\/\/[^\s]*/g;
+        /* Safari上音乐id匹配的正则方法不支持，导致报错无法展示，暂时去掉音乐解析功能
+          const qq_music = /y\.qq\.com/g;
+          const netease_music = /music\.163\.com/g;
+        */
+        //  const music_url = /[a-zA-z]+:\/\/[^\s]*/g;
+        /*  
           const music_type = /(&songmid=)|(song\?id=)|(songDetail)/g;
           const music_id = /((?<=\?id=)(.*?)(?=&uct))|((?<=\&songmid=)(.*?)(?=&type))|((?<=\&id=)(.*?)(?=&ADTAG=))|((?<=playlist\?id=)(.*?)(?=&userid=))|(?<=playlist\/).*$|((?<=h5_playsong\&mid=)(.*?)(?=\&no_redirect))|((?<=songDetail\/)(.*?)(?=\?songtype=))/g;
             if (music_type.test(str)) {
@@ -127,6 +130,7 @@ export default {
               return `<meting-js server="` + server + `" type="` + type + `" id="` + music + `"> </meting-js>`;
               });
             } else {}
+        */
           str = str.replace(re_forpic, function (url) {
             return `<a href="${url}" target="_blank" data-fancybox="group" class="fancybox">
             <img src="${url}" ></a>`;
